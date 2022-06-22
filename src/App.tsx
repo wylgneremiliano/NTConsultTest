@@ -5,7 +5,7 @@ import { store } from "@store/index";
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <Routes />;
+      <Routes />
     </Provider>
   );
 };
