@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 
-function Dashboard() {
+const Dashboard: React.FC = () => {
   return <Container>Pagina de Dashboard</Container>;
-}
+};
 
 export { Dashboard };

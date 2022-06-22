@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 
-function Login() {
+const Login: React.FC = () => {
   return <Container>Pagina de Login</Container>;
-}
+};
 
 export { Login };

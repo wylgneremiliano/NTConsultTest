@@ -1,6 +1,6 @@
 import { Route, BrowserRouter, Routes as Switch } from "react-router-dom";
-import { Dashboard } from "../pages/Dashboard";
-import { Login } from "../pages/Login";
+import { Dashboard } from "@pages/Dashboard";
+import { Login } from "@pages/Login";
 
 const Routes = () => (
   <BrowserRouter>

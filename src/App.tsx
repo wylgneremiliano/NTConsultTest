@@ -1,8 +1,8 @@
-import { Routes } from "@routes/index";
+import { Routes } from "@config/routes";
 import "./App.css";
 
-function App() {
+const App: React.FC = () => {
   return <Routes />;
-}
+};
 
 export default App;
