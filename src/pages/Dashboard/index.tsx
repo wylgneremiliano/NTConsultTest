@@ -11,11 +11,11 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     dispatch(listDragons());
-  });
+  }, [dispatch, listDragons]);
   return (
     <Container>
-      {dragons.map((item: IDragons) => (
-        <div>
+      {dragons.map((item: IDragons, index) => (
+        <div key={index}>
           <h1>{item.name}</h1>
           <p>{item.type}</p>
         </div>
