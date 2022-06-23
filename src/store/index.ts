@@ -1,17 +1,18 @@
-import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux";
-import { reducer } from "./modules/Dragon/dragon.store";
+import { Action, configureStore, AsyncThunkAction } from "@reduxjs/toolkit";
+
+import { reducer as dragon } from "./modules/Dragon/dragon.store";
+import { reducer as auth } from "./modules/Auth/auth.store";
+
+import thunk from "redux-thunk";
 
 const store = configureStore({
   reducer: {
-    dragon: reducer,
+    dragon,
+    auth,
   },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
-
 export type AppDispatch = typeof store.dispatch;
-export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
-export const useAppDispatch = () => useDispatch<AppDispatch>();
 
 export { store };

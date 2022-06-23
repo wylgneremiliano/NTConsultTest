@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { request } from "@services/api/axios.service";
+import { AxiosResponse } from "axios";
 
 export type BaseRequest = {
   method: "GET" | "POST" | "PUT" | "DELETE";
@@ -17,7 +18,7 @@ export const listDragons: any = createAsyncThunk(
         method: "GET",
         url: `/dragon`,
       };
-      const response = await request(baseRequest);
+      const response: AxiosResponse = await request(baseRequest);
       return response.data;
     } catch (error) {
       console.log(error);

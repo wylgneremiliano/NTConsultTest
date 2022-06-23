@@ -11,8 +11,6 @@ export const request = async (requestConfig: AxiosRequestConfig) =>
       const response = (await Promise.race([api(request)])) as AxiosResponse;
       resolve(response);
     } catch (error) {
-      console.log(error);
+      reject(error);
     }
   });
-
-export const isAxiosError = axios.isAxiosError;

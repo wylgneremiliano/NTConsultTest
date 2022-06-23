@@ -58,9 +58,11 @@ export const BoxForm = styled.div`
   width: 30%;
   @media (max-width: 1000px) {
     width: 80%;
+    align-items: center;
   }
   display: flex;
   justify-content: center;
+
   flex-direction: column;
   padding: 10px;
   color: #fff;
@@ -84,4 +86,11 @@ export const Input = styled.input`
   padding: 10px 0;
   background: transparent;
   transition: border-color 0.2s;
+`;
+
+export const SpanError = styled.span`
+  text-align: center;
+  font-weight: 300;
+  color: ${draculaTheme.red};
+  font-size: 11px;
 `;
