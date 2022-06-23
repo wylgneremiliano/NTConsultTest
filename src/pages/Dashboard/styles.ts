@@ -8,7 +8,6 @@ export const Container = styled.div`
   flex-direction: column;
   background-color: ${draculaTheme.currentLine};
   width: 100%;
-  height: calc(100vh - 4.5rem);
   margin-top: 72px;
   padding-bottom: 72px;
 `;

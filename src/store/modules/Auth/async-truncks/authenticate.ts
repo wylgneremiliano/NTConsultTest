@@ -11,7 +11,7 @@ export const authenticate: any = createAsyncThunk(
   async (data: LoginDTO, { dispatch, rejectWithValue }) => {
     try {
       if (
-        await LOGIN_VALIDOS.some((elem) => {
+        LOGIN_VALIDOS.some((elem) => {
           return elem.email === data.email && elem.password === data.password;
         })
       ) {

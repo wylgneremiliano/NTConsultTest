@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { request } from "@services/api/axios.service";
-import { AxiosResponse } from "axios";
+import { IDragons } from "@src/interfaces/IDragon";
 
 export type BaseRequest = {
   method: "GET" | "POST" | "PUT" | "DELETE";
@@ -10,15 +10,17 @@ export type BaseRequest = {
   timeout?: number;
 };
 
-export const listDragons: any = createAsyncThunk(
-  "dragon/list-dragon",
-  async () => {
+export const editDragon: any = createAsyncThunk(
+  "dragon/edit-dragons",
+  async (data: IDragons) => {
     try {
       const baseRequest: BaseRequest = {
-        method: "GET",
-        url: `/dragon`,
+        method: "PUT",
+        url: `/dragon/${data.id}`,
+        data,
       };
-      const response: AxiosResponse = await request(baseRequest);
+
+      const response = await request(baseRequest);
       return response.data;
     } catch (error) {
       console.log(error);

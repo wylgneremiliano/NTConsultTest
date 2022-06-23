@@ -3,13 +3,15 @@ import styled from "styled-components";
 import EditIcon from "@mui/icons-material/Edit";
 import ClearIcon from "@mui/icons-material/Clear";
 import { shade } from "polished";
+import SettingsBackupRestoreOutlinedIcon from "@mui/icons-material/SettingsBackupRestoreOutlined";
 
 export const Container = styled.section`
   position: relative;
   display: flex;
   justify-content: center;
+
   width: 100%;
-  max-height: 100vh;
+
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 20px;
@@ -22,25 +24,6 @@ export const Container = styled.section`
       font-size: 20;
     }
   }
-
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(13deg, #ccc 14%, #ccc 67%);
-    border-radius: 20px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(13deg, #808080 14%, #808080 64%);
-  }
-  ::-webkit-scrollbar-track {
-    background: ${draculaTheme.currentLine};
-    box-shadow: inset 7px 10px 12px ${draculaTheme.comment};
-  }
-  scrollbar-color: #ccc ${draculaTheme.currentLine};
-  scrollbar-width: thin;
-  background-color: ${draculaTheme.currentLine};
 `;
 
 export const Box = styled.div`
@@ -53,15 +36,15 @@ export const Box = styled.div`
 export const ServiceBox = styled.div`
   margin: 5px;
   position: relative;
-
   text-decoration: none;
   padding: 10px;
   width: 350px;
-  height: 250px;
+  height: 320px;
   @media (max-width: 991px) {
     width: 300px;
-    height: 230px;
+    height: 320px;
   }
+
   background-color: ${draculaTheme.backgroundSecondary};
   border-radius: 10px;
   overflow: hidden;
@@ -85,8 +68,31 @@ export const ServiceBox = styled.div`
   :hover div {
     transform: scale(1);
   }
+  button {
+    border: none;
+    z-index: 3;
+    border-radius: 20px;
+    color: ${draculaTheme.foreground};
+    width: 60%;
+    background-color: ${draculaTheme.green};
+    padding: 9px 5px;
+
+    cursor: pointer;
+    @media (max-width: 1000px) {
+      width: 86%;
+    }
+    :hover {
+      background-color: ${shade(0.2, draculaTheme.green)};
+    }
+  }
 `;
 
+export const InputContainerButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
 export const Icon = styled.div`
   position: absolute;
   top: 0;
@@ -100,9 +106,12 @@ export const Icon = styled.div`
   cursor: pointer;
   justify-content: center;
   z-index: 2;
-  background-color: ${draculaTheme.purple};
+  background-color: ${draculaTheme.background};
 `;
 export const Content = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   padding: 20px;
   color: ${(props) => props.theme.text};
@@ -141,6 +150,7 @@ export const ActionButtonContainer = styled.div`
 `;
 
 export const Edit = styled(EditIcon)``;
+export const NotEdit = styled(SettingsBackupRestoreOutlinedIcon)``;
 
 export const Remove = styled(ClearIcon)``;
 
@@ -153,9 +163,9 @@ export const BoxButton = styled.div`
   padding: 0 10px;
   cursor: pointer;
   :nth-child(1) {
-    background-color: ${draculaTheme.orange};
+    background-color: ${draculaTheme.blue};
     :hover {
-      background-color: ${shade(0.2, draculaTheme.orange)};
+      background-color: ${shade(0.2, draculaTheme.blue)};
     }
   }
   :nth-child(2) {
@@ -168,4 +178,28 @@ export const BoxButton = styled.div`
     width: 30px;
     height: 30px;
   }
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+  outline: 0;
+  font-size: 0.8rem;
+
+  color: #fff;
+  margin: 5px 0;
+  padding: 10px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+`;
+export const InputContainer = styled.div`
+  width: 200px;
+  @media (max-width: 1000px) {
+    width: 280px;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;

@@ -9,14 +9,15 @@ export type BaseRequest = {
   timeout?: number;
 };
 
-export const getDragon: any = createAsyncThunk(
-  "dragon/get-dragons",
+export const detailsDragon: any = createAsyncThunk(
+  "dragon/detais-dragons",
   async (id: number) => {
     try {
       const baseRequest: BaseRequest = {
         method: "GET",
-        url: `/dragon${id}`,
+        url: `/dragon/${id}`,
       };
+
       const response = await request(baseRequest);
       return response.data;
     } catch (error) {

@@ -17,6 +17,7 @@
     "@reduxjs/toolkit": "^1.8.2",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/redux-logger": "^3.0.9",
+    "date-fns": "^2.28.0",
     "immer": "^9.0.15",
     "jsonwebtoken": "^8.5.1",
     "polished": "^4.2.2",

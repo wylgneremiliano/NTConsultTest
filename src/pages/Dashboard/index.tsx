@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container } from "./styles";
 import { CardDragons } from "./components/CardBox";
 import { Header } from "./components/Header";
+import { FormAddDragons } from "./components/FormAddDragons";
 
 const Dashboard: React.FC = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const Dashboard: React.FC = () => {
   return (
     <Container>
       <Header />
+      <FormAddDragons />
       <CardDragons />
     </Container>
   );
